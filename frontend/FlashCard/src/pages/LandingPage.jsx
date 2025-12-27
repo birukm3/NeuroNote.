@@ -7,6 +7,7 @@ import Geography from "../assets/Geography.png"
 import History from "../assets/History.png"
 import Geometry from "../assets/Geometry.png"
 import Chem from "../assets/Chem.png"
+import login from "../assets/login.png"
 
 export const LandingPage = () => {
     return (
@@ -63,7 +64,7 @@ export const LandingPage = () => {
                             <img
                                 src={fileUpload} 
                                 alt="Upload demo"
-                                className="mx-auto max-w-xl rounded-lg shadow-lg mt-10"
+                                /*className="mx-auto max-w-xl rounded-lg shadow-lg mt-10"*/
                             />
                         </div>
                     </section>
@@ -81,17 +82,13 @@ export const LandingPage = () => {
                             </h3>
                             */}
                             {/*1st Row*/}
-                            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                            <img src={Math} alt="1" className="w-full rounded-xl shadow" />
-                            <img src={History} alt="2" className="w-full rounded-xl shadow" />
-                            <img src={Geometry} alt="3" className="w-full rounded-xl shadow" />
-                            </div>
-
-                            {/*2nd Row*/}
-                            <div className="flex justify-center gap-6 mt-6 flex-wrap">
-                                <img src={Geography} alt="4" className="w-full max-w-sm rounded-xl shadow" />
-                                <img src={Chem} alt="5" className="w-full max-w-sm rounded-xl shadow" />
-                            </div>
+                            {/*<div className="grid grid-cols-1 md:grid-cols-3 gap-6">*/}
+                            <img 
+                                src = {login}
+                                alt="Login Picture"
+                                
+                            />
+                            
                         </div>
                     </section>
                 </div>
