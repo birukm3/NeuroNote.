@@ -3,6 +3,11 @@ import { getAuth } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 import { ChevronDownIcon } from "@heroicons/react/24/outline";
 import { NavBarDash } from "../components/NavbarDash";
+const API = import.meta.env.VITE_API_URL;
+
+if (!API) {
+  console.error("VITE_API_BASE_URL is missing. Check your frontend .env file and restart Vite.");
+}
 
 export const Flashcards = () => {
   const [flashcardsByClass, setFlashcardsByClass] = useState({});
@@ -19,7 +24,7 @@ export const Flashcards = () => {
       }
 
       try {
-        const res = await fetch(`http://localhost:5050/flashcards/${user.uid}`);
+        const res = await fetch(`${API}/flashcards/${user.uid}`);
         const data = await res.json();
         setFlashcardsByClass(data);
       } catch (err) {

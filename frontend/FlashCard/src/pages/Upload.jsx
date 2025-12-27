@@ -3,6 +3,11 @@ import { useNavigate } from "react-router-dom";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { CloudArrowUpIcon } from "@heroicons/react/24/solid";
 import { NavBarDash } from "../components/NavbarDash";
+const API = import.meta.env.VITE_API_URL;
+
+if (!API) {
+  console.error("VITE_API_BASE_URL is missing. Check your frontend .env file and restart Vite.");
+}
 
 export const Upload = () => {
   const [selectedFile, setSelectedFile] = useState(null);
@@ -42,7 +47,7 @@ export const Upload = () => {
 
     try {
       setLoading(true);
-      const res = await fetch("http://localhost:5050/generate", {
+      const res = await fetch(`${API}/generate`, {
         method: "POST",
         body: formData,
       });
